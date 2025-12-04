@@ -1,84 +1,67 @@
-WEBENDTERMGROUP14
-COMPLAINT MANAGEMENT SYSTEM
-team members:
-ADITYA MAHESHWARI 2315000123 
- KINJAL GUPTA 2315001134 CSE 
- PRIYANSHU NAYAK 2315510154 
- KHUSHI GANGWAR 2315510100 ( Captain)
- PRIYA GOYAL 2315510151 AIML
- work load divide:
+# 📢 Complaint Management System
 
+### **WEB END TERM PROJECT — GROUP 14**
 
+A minimal, functional Complaint Management System built under strict time constraints. The system allows users to file complaints, admins to assign them, and agents to resolve them.
 
+---
 
+## 👥 Team Members
 
-Member 1 — User UI (Frontend)
+* **Khushi Gangwar (Captain)** — 2315510100 — AIML
+* Aditya Maheshwari — 2315000123 — CSE
+* Kinjal Gupta — 2315001134 — CSE
+* Priyanshu Nayak — 2315510154 — AIML
+* Priya Goyal — 2315510151 — AIML
 
+---
 
+## ⚡ Workload Division (Minimal — 2 Hour Build)
 
-Page 1: “File Complaint”
+### 🟦 Member 1 — User UI (Frontend)
 
-Inputs: name, category, description, priority
+**Branch:** `feature-user-ui`
 
-File upload (optional)
+* Page: **File Complaint** (name, category, description, priority, optional file)
+* Page: **My Complaints** (list complaints using `GET /complaints?role=user`)
+* Basic alignment only; no heavy CSS.
 
-Button → POST /complaints
+---
 
-Page 2: “My Complaints”
+### 🟥 Member 2 — Admin UI (Frontend)
 
-GET /complaints?role=user
+**Branch:** `feature-admin-ui`
 
-Show simple list with status + ticket ID
+* Table of all complaints (`GET /complaints`)
+* Dropdown: **Assign to Agent** (2 hardcoded agents)
+* Button → `PATCH /complaints/:id/assign`
 
-No CSS needed except basic alignment.
+---
 
-Branch: feature-user-ui
+### 🟩 Member 3 — Agent UI (Frontend)
 
-Member 2 — Admin UI (Frontend)
+**Branch:** `feature-agent-ui`
 
+* Fetch assigned tickets (`GET /complaints?agentId=1`)
+* Show list
+* Button: **Mark as Resolved** → `PATCH /complaints/:id/status`
 
-Table of all complaints (GET /complaints)
+---
 
-Column: “Assign to Agent”
+### 🟧 Member 4 — Core Backend
 
-Dropdown with 2 hardcoded agents (e.g., Agent A, Agent B)
+**Branch:** `feature-backend`
 
-Button → PATCH /complaints/:id/assign
+* `POST /complaints`
+* `GET /complaints` (role/user/agent filtering)
+* `PATCH /complaints/:id/assign`
+* `PATCH /complaints/:id/status`
+* Optional: file upload route
+* Use in-memory DB or SQLite
 
-Branch: feature-admin-ui
+**Sample Complaint Object:**
 
-Member 3 — Agent UI (Frontend)
-
-
-
-GET /complaints?agentId=1
-
-Show tickets assigned to the agent
-
-Button: “Mark as Resolved”
-
-PATCH /complaints/:id/status
-
-Branch: feature-agent-ui
-
-Member 4 — Core Backend (Complaints + Assignment + Status)
-
-
-
-POST /complaints
-
-GET /complaints (filter by role/user/agent)
-
-PATCH /complaints/:id/assign
-
-PATCH /complaints/:id/status
-
-Serve file uploads (optional tiny route)
-
-Use in-memory DB (array) or SQLite to save time.
-
-Example complaint object:
-
+```
 {
   "id": 1,
   "userName": "Aster",
@@ -88,54 +71,30 @@ Example complaint object:
   "status": "New",
   "assignedTo": null
 }
+```
+
+---
+
+### 🟪 Member 5 — Repo Setup + Integration + Testing
+
+**Branch:** `feature-setup`
+
+* Create repo + folder structure
+* Enable CORS + backend-frontend connection
+* Add sample categories (IT, HR, Sanitation)
+* Test all backend routes
+* Assist frontend members with API calls
+* Merge PRs + resolve conflicts
+
+---
 
 
-Branch: feature-backend
+## 🧪 Demo Flow (For Judges)
 
-Member 5 — Integrations + Repo Setup + Testing
+1. User files complaint
+2. Admin assigns to agent
+3. Agent resolves ticket
+4. User sees updated status
 
-
-Tasks:
-
-Create repo + folder structure
-
-Create CORS + connection between frontend & backend
-
-Add sample categories (IT, HR, Sanitation)
-
-Test each endpoint as Member 4 completes
-
-Help Members 1/2/3 with API calls
-
-Deploy to localhost only (no cloud needed)
-
-Merge all PRs → resolve conflicts
-
-Branch: feature-setup
-
-Member 5 sets up repo + pushes base structure
-
-Others pull & create branches
-
-Member 4 builds /complaints POST + GET
-
-Members 1/2/3 build static UI mock
-
-Member 4 builds assign + status update routes
-
-Member 1 integrates create + list
-
-Member 2 integrates assign
-
-Member 3 integrates resolve
-
-Member 5 tests everything
-
-Fix small bugs
-
-Merge branches → main
-
-Final testing
-
-
+---
 
