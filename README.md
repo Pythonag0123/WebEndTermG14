@@ -113,20 +113,13 @@ Merge all PRs → resolve conflicts
 
 Branch: feature-setup
 
-⏳ Timeline (Strict)
-0:00–0:10
-
 Member 5 sets up repo + pushes base structure
 
 Others pull & create branches
 
-0:10–0:30
-
 Member 4 builds /complaints POST + GET
 
 Members 1/2/3 build static UI mock
-
-0:30–1:00
 
 Member 4 builds assign + status update routes
 
@@ -136,18 +129,13 @@ Member 2 integrates assign
 
 Member 3 integrates resolve
 
-1:00–1:30
-
 Member 5 tests everything
 
 Fix small bugs
 
 Merge branches → main
 
-1:30–2:00
-
 Final testing
 
-Make quick demo script
 
-If time left → add tiny feature (feedback or file upload)
+
