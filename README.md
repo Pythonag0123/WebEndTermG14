@@ -12,6 +12,18 @@ Users can enter the title, choose a category, set priority, write a description,
 
 A minimal, functional Complaint Management System built under strict time constraints. The system allows users to file complaints, admins to assign them, and agents to resolve them.
 
+## 🔐 User Registration – Create Your Account
+
+This screen displays the **User Registration Page** of our Complaint Management System (CMS).  
+New users can create an account by entering their basic details. The interface is simple, clean, and optimized for quick onboarding.
+
+---
+
+### 📸 Screenshot – Registration Form
+
+![Registration Page](Register.png)
+
+
 ---
 
 ## 👥 Team Members
